@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\UDPServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\UDPServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\UDPServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\UDPServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServerDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\SocketServerDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\SocketServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServerDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\SocketServerDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\SocketServer.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     "
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\Message.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\Message.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DA96EED9-6161-4546-8EF8-B1CC0E2E2806}|SocketServer\\SocketServer.vcxproj|solutionrelative:SocketServer\\SocketServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Message.h",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\Message.h",
+              "RelativeDocumentMoniker": "SocketServer\\Message.h",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\Message.h",
+              "RelativeToolTip": "SocketServer\\Message.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-07T13:30:13.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SocketServerDlg.h",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServerDlg.h",
+              "RelativeDocumentMoniker": "SocketServer\\SocketServerDlg.h",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServerDlg.h",
+              "RelativeToolTip": "SocketServer\\SocketServerDlg.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAASwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-03T15:32:25.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UDPServer.h",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\UDPServer.h",
+              "RelativeDocumentMoniker": "SocketServer\\UDPServer.h",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\UDPServer.h",
+              "RelativeToolTip": "SocketServer\\UDPServer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-03T14:31:50.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SocketServer.rc - IDD_SOCKETSERVER_DIALOG - Dialog",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.rc",
+              "RelativeDocumentMoniker": "SocketServer\\SocketServer.rc",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.rc - IDD_SOCKETSERVER_DIALOG - Dialog",
+              "RelativeToolTip": "SocketServer\\SocketServer.rc - IDD_SOCKETSERVER_DIALOG - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-03T13:59:38.924Z",
+              "EditorCaption": " - IDD_SOCKETSERVER_DIALOG - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SocketServer.h",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.h",
+              "RelativeDocumentMoniker": "SocketServer\\SocketServer.h",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.h",
+              "RelativeToolTip": "SocketServer\\SocketServer.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-03T15:15:48.796Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UDPServer.cpp",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\UDPServer.cpp",
+              "RelativeDocumentMoniker": "SocketServer\\UDPServer.cpp",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\UDPServer.cpp",
+              "RelativeToolTip": "SocketServer\\UDPServer.cpp",
+              "ViewState": "AQIAAE8AAAAAAAAAAAApwGkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-03T14:32:02.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SocketServer.cpp",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.cpp",
+              "RelativeDocumentMoniker": "SocketServer\\SocketServer.cpp",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServer.cpp",
+              "RelativeToolTip": "SocketServer\\SocketServer.cpp",
+              "ViewState": "AQIAACcAAAAAAAAAAAAiwDMAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-03T14:18:18.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SocketServerDlg.cpp",
+              "DocumentMoniker": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServerDlg.cpp",
+              "RelativeDocumentMoniker": "SocketServer\\SocketServerDlg.cpp",
+              "ToolTip": "C:\\Users\\yyh77\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\SocketServer\\SocketServer\\SocketServer\\SocketServerDlg.cpp",
+              "RelativeToolTip": "SocketServer\\SocketServerDlg.cpp",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAAAKkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-03T14:18:15.807Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
