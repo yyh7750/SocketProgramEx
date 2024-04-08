@@ -1,0 +1,42 @@
+# Visual Studio에서 생성된 파일
+*.user
+*.suo
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.sdf
+*.opensdf
+*.cachefile
+*.VC.opendb
+*.VC.db
+
+# IntelliSense 디렉토리
+ipch/
+
+# 수동 생성된 디렉토리 및 파일
+bin/
+obj/
+
+# MFC 디버그 파일
+*.ilk
+*.pdb
+*.exe
+*.dll
+
+# WPF 디버그 파일
+*.exe
+*.pdb
+*.dll
+*.application
+*.deploy
+
+# 기타 임시 파일
+*.log
+*.backup
+*.bak
+*.cache
+
+# 추가하고 싶은 기타 파일 및 디렉토리
