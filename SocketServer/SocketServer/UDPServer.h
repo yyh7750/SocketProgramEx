@@ -20,8 +20,6 @@ private:
     SOCKADDR_IN m_ServerAddr;
     SOCKADDR_IN clientAddr;
     MessageInfo messageInfo;
-
-    BYTE* MessageToBytes(MessageInfo& message);
     BOOL m_bInitialized;
 
 };

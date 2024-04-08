@@ -53,10 +53,12 @@ void UDPServer::OnReceive(int nErrorCode)
 	{
 		int addrLen = sizeof(clientAddr);
 
-		BYTE recvBuffer[sizeof(MessageInfo)];
+		//BYTE recvBuffer[sizeof(MessageInfo)];
+		MessageInfo* recvMessage;
 
 		// 데이터 수신
-		int recvLen = ReceiveFrom(recvBuffer, sizeof(recvBuffer), (SOCKADDR*)&clientAddr, &addrLen);
+		//int recvLen = ReceiveFrom(recvBuffer, sizeof(recvBuffer), (SOCKADDR*)&clientAddr, &addrLen);
+		int recvLen = ReceiveFrom(recvMessage, sizeof(MessageInfo), (SOCKADDR*)&clientAddr, &addrLen);
 		if (recvLen == SOCKET_ERROR)
 		{
 			OutputDebugString(_T("error!!!"));
@@ -78,8 +80,7 @@ void UDPServer::OnReceive(int nErrorCode)
 		}
 	}
 
-
-	CAsyncSocket::OnReceive(nErrorCode);
+	//CAsyncSocket::OnReceive(nErrorCode);
 }
 
 void UDPServer::SendMessage(const char* data)
@@ -92,11 +93,12 @@ void UDPServer::SendMessage(const char* data)
 
 	// 메시지 정보 생성
 	MessageInfo message;
-	message.m_port = 9999; // 포트 번호 설정
+	message.m_port = 9999;
 	strcpy_s(message.m_data, sizeof(message.m_data), data); // 데이터 복사
 
 	// 메시지 정보를 바이트 배열로 변환
-	BYTE* sendData = MessageToBytes(message);
+	BYTE* sendData = new BYTE[sizeof(message)];
+	memcpy(sendData, &message, sizeof(message));
 
 	// 클라이언트에게 메시지 전송
 	int sendResult = SendTo(sendData, sizeof(message), (SOCKADDR*)&clientAddr, sizeof(clientAddr), 0);
@@ -115,11 +117,4 @@ void UDPServer::SendMessage(const char* data)
 void UDPServer::Run(UINT nPort)
 {
 	Initialize(nPort);
-}
-
-BYTE* UDPServer::MessageToBytes(MessageInfo& message)
-{
-	BYTE* result = new BYTE[sizeof(message)];
-	memcpy(result, &message, sizeof(message));
-	return result;
 }
