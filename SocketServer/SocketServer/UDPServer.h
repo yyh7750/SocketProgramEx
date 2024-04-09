@@ -19,7 +19,6 @@ protected:
 private:
     SOCKADDR_IN m_ServerAddr;
     SOCKADDR_IN clientAddr;
-    MessageInfo messageInfo;
+    MessageInfo sendMessage;
     BOOL m_bInitialized;
-
 };

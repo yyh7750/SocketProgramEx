@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using SocketClient.Model;
 using System.Diagnostics;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace SocketClient.ViewModel
 {
@@ -15,14 +16,18 @@ namespace SocketClient.ViewModel
         private UdpClient client;
         private IPEndPoint serverEndPoint;
         private const string ServerIp = "127.0.0.1";
-        private const int ServerPort = 9999;
-        private const int ClientReceivePort = 9998;
-        private bool isRunning = true;
+        private const int serverPort = 9999;
+        private const int clientPort = 9998;
         private ListBox listBox;
+        private Message sendMessage;
+        private ListItem listItem;
 
         public MessageViewModel(ListBox listBox)
         {
+            listItem = new ListItem();
             this.listBox = listBox;
+            Random ran = new Random();
+            sendMessage = new Message(ran.Next(2_147_483_647)); // ID 설정
             InitializeSocket();
             StartReceiving();
         }
@@ -31,9 +36,9 @@ namespace SocketClient.ViewModel
         {
             try
             {
-                client = new UdpClient(ClientReceivePort);
+                client = new UdpClient(clientPort);
                 // 서버 IP와 포트를 설정.
-                serverEndPoint = new IPEndPoint(IPAddress.Parse(ServerIp), ServerPort);
+                serverEndPoint = new IPEndPoint(IPAddress.Parse(ServerIp), serverPort);
                 Debug.WriteLine("초기화 실행");
             }
             catch (Exception ex)
@@ -49,7 +54,7 @@ namespace SocketClient.ViewModel
             {
                 try
                 {
-                    while (isRunning)
+                    while (true)
                     {
                         IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
                         byte[] data = client.Receive(ref remoteEndPoint);
@@ -57,12 +62,17 @@ namespace SocketClient.ViewModel
                         // 수신된 바이트 배열을 구조체로 변환
                         Message message = BytesToMessage(data);
 
-                        string receivedData = new string(message.GetData());
-                        Debug.WriteLine("수신된 데이터: " + receivedData);
+                        string recvData = new string(message.GetData());
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append("<- ID: ").Append(message.GetId()).Append(", ");
+                        sb.Append("PORT: ").Append(sendMessage.GetPort()).Append(", ");
+                        sb.Append("Data: ").Append(recvData.Substring(0, recvData.IndexOf('\0')));
+                        listItem.Content = sb.ToString();
+                        listItem.Alignment = HorizontalAlignment.Left;
 
                         listBox.Dispatcher.Invoke(() =>
                         {
-                            listBox.Items.Add(receivedData.Substring(0, receivedData.IndexOf('\0')));
+                            listBox.Items.Add(listItem);
                         });
                     }
                 }
@@ -86,13 +96,25 @@ namespace SocketClient.ViewModel
 
         public object SendMessage(char[] data)
         {
-            Message message = new Message(ServerPort, data);
-            byte[] byteData = MessageToBytes(message);
+            sendMessage.SetPort(clientPort);
+            sendMessage.SetData(data);
+            byte[] byteData = MessageToBytes(sendMessage);
 
             try
             {
                 // 데이터 전송
                 client.Send(byteData, byteData.Length, serverEndPoint);
+                StringBuilder sb = new StringBuilder();
+                sb.Append("-> ID: ").Append(sendMessage.GetId()).Append(", ");
+                sb.Append("PORT: ").Append(sendMessage.GetPort()).Append(", ");
+                sb.Append("Data: ").Append(sendMessage.GetData());
+                listItem.Content = sb.ToString();
+                listItem.Alignment = HorizontalAlignment.Right;
+
+                listBox.Dispatcher.Invoke(() =>
+                {
+                    listBox.Items.Add(listItem);
+                });
                 return true;
             }
             catch (Exception e)
@@ -103,12 +125,14 @@ namespace SocketClient.ViewModel
 
         public byte[] MessageToBytes(Message message)
         {
+            byte[] idBytes = BitConverter.GetBytes(message.GetId());
             byte[] portBytes = BitConverter.GetBytes(message.GetPort());
             byte[] dataBytes = Encoding.UTF8.GetBytes(message.GetData());
 
-            byte[] result = new byte[portBytes.Length + dataBytes.Length];
-            portBytes.CopyTo(result, 0);
-            dataBytes.CopyTo(result, portBytes.Length);
+            byte[] result = new byte[idBytes.Length + portBytes.Length + dataBytes.Length];
+            idBytes.CopyTo(result, 0);
+            portBytes.CopyTo(result, idBytes.Length);
+            dataBytes.CopyTo(result, idBytes.Length + portBytes.Length);
 
             return result;
         }

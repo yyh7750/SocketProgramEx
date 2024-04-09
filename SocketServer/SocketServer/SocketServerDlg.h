@@ -41,10 +41,8 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	// 수신 메시지 표시
-	void AddMessageToListBox(CString& message);
-	// 종료
 	afx_msg void OnDestory();
 	afx_msg void OnBnClickedSend();
 	afx_msg void OnBnClickedConnect();
+	void AddMessageToListBox(const CString message);
 };

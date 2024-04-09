@@ -153,11 +153,6 @@ HCURSOR CSocketServerDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-void CSocketServerDlg::AddMessageToListBox(CString& message)
-{
-	m_listBox.AddString(message);
-}
-
 void CSocketServerDlg::OnDestory()
 {
 	CDialogEx::OnDestroy();
@@ -183,8 +178,12 @@ void CSocketServerDlg::OnBnClickedSend()
 	m_editBox.SetWindowText(_T(""));
 }
 
-
 void CSocketServerDlg::OnBnClickedConnect()
 {
 	m_udpServer.Run(9999);
+}
+
+void CSocketServerDlg::AddMessageToListBox(const CString message)
+{
+	m_listBox.AddString(message);
 }

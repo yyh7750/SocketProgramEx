@@ -8,14 +8,17 @@ namespace SocketClient.Model
     public struct Message
     {
         [MarshalAs(UnmanagedType.I4)]
+        private int id;
+        [MarshalAs(UnmanagedType.I4)]
         private int port;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)]
         private char[] data;
 
-        public Message(int port, char[] data)
+        public Message(int id)
         {
-            this.port = port;
-            this.data = data;
+            this.id = id;
+            this.port = 0;
+            this.data = new char[50];
         }
 
         public int GetPort()
@@ -38,5 +41,14 @@ namespace SocketClient.Model
             data = value;
         }
 
+        public int GetId()
+        {
+            return id;
+        }
+
+        public void SetId(int value)
+        {
+            id = value;
+        }
     }
 }

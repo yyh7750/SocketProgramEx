@@ -5,6 +5,8 @@
 UDPServer::UDPServer()
 	: m_bInitialized(FALSE)
 {
+	srand(static_cast<unsigned int>(time(NULL)));
+	sendMessage.m_id = rand() % 2147483647;
 }
 
 BOOL UDPServer::Initialize(UINT nPort)
@@ -53,12 +55,8 @@ void UDPServer::OnReceive(int nErrorCode)
 	{
 		int addrLen = sizeof(clientAddr);
 
-		//BYTE recvBuffer[sizeof(MessageInfo)];
-		MessageInfo* recvMessage;
-
-		// 데이터 수신
-		//int recvLen = ReceiveFrom(recvBuffer, sizeof(recvBuffer), (SOCKADDR*)&clientAddr, &addrLen);
-		int recvLen = ReceiveFrom(recvMessage, sizeof(MessageInfo), (SOCKADDR*)&clientAddr, &addrLen);
+		MessageInfo recvMessage;
+		int recvLen = ReceiveFrom(&recvMessage, sizeof(MessageInfo), (SOCKADDR*)&clientAddr, &addrLen);
 		if (recvLen == SOCKET_ERROR)
 		{
 			OutputDebugString(_T("error!!!"));
@@ -66,16 +64,13 @@ void UDPServer::OnReceive(int nErrorCode)
 			return;
 		}
 
-		MessageInfo messageInfo;
-		memcpy(&messageInfo, recvBuffer, sizeof(MessageInfo));
-
 		CString outputString;
-		outputString.Format(_T("Port: %d, Data: %s\n\n"), messageInfo.m_port, CString(messageInfo.m_data));
+		outputString.Format(_T("<- ID: %d, Port: %d, Data: %s\n\n"), recvMessage.m_id, recvMessage.m_port, CString(recvMessage.m_data));
 		OutputDebugString(outputString);
 
 		CSocketServerDlg* pDlg = (CSocketServerDlg*)AfxGetApp()->GetMainWnd();
 		if (pDlg != nullptr) {
-			CString str = CString(messageInfo.m_data);
+			CString str = CString(outputString);
 			pDlg->AddMessageToListBox(str);
 		}
 	}
@@ -92,27 +87,31 @@ void UDPServer::SendMessage(const char* data)
 	}
 
 	// 메시지 정보 생성
-	MessageInfo message;
-	message.m_port = 9999;
-	strcpy_s(message.m_data, sizeof(message.m_data), data); // 데이터 복사
-
-	// 메시지 정보를 바이트 배열로 변환
-	BYTE* sendData = new BYTE[sizeof(message)];
-	memcpy(sendData, &message, sizeof(message));
+	sendMessage.m_port = 9999;
+	strcpy_s(sendMessage.m_data, sizeof(sendMessage.m_data), data); // 데이터 복사
 
 	// 클라이언트에게 메시지 전송
-	int sendResult = SendTo(sendData, sizeof(message), (SOCKADDR*)&clientAddr, sizeof(clientAddr), 0);
+	int sendResult = SendTo((BYTE*)&sendMessage, sizeof(sendMessage), (SOCKADDR*)&clientAddr, sizeof(clientAddr), 0);
 	if (sendResult == SOCKET_ERROR)
 	{
 		int errorCode = WSAGetLastError();
 		CString errorStr;
 		errorStr.Format(_T("메시지 전송 중 오류 발생. 에러 코드: %d\n"), errorCode);
 		OutputDebugString(errorStr);
+		return;
 	}
 
-	// 동적 할당된 메모리 해제
-	delete[] sendData;
+	CString outputString;
+	outputString.Format(_T("-> ID: %d, Port: %d, Data: %s\n\n"), sendMessage.m_id, sendMessage.m_port, CString(sendMessage.m_data));
+	OutputDebugString(outputString);
+
+	CSocketServerDlg* pDlg = (CSocketServerDlg*)AfxGetApp()->GetMainWnd();
+	if (pDlg != nullptr) {
+		CString str = CString(outputString);
+		pDlg->AddMessageToListBox(str);
+	}
 }
+
 
 void UDPServer::Run(UINT nPort)
 {
